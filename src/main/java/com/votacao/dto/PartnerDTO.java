@@ -12,7 +12,8 @@ import lombok.NoArgsConstructor;
 @Builder
 public class PartnerDTO {
     private Long id;
-    private String cpf;
     private String nome;
+    private String cpf;
+
 
 }

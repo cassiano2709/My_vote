@@ -16,7 +16,6 @@ public class Vote {
     private Long voteId;
 
     @ManyToOne
-    @NonNull
     @JoinColumn(name = "partener_id" , referencedColumnName = "id")
     private Partner partner;
 

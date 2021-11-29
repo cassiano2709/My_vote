@@ -1,6 +1,7 @@
 package com.votacao.service;
 
 import com.sun.xml.bind.marshaller.Messages;
+import com.votacao.dto.SessionCreateRequestDTO;
 import com.votacao.dto.SessionDTO;
 import com.votacao.dto.SessionUpdateRequestDTO;
 import com.votacao.entity.Session;
@@ -14,13 +15,17 @@ import java.util.Optional;
 public class SessionService {
 
     private SessionRepository sessionRepository;
-    private ParticipantService participantService;
 
 
 
-    public SessionDTO create(SessionDTO sessionDto) {
 
-        return sessionDto;
+    public SessionDTO create(SessionCreateRequestDTO session) {
+
+
+
+
+
+        return null;
     }
 
     public SessionDTO findDTOById(Long id){
@@ -29,9 +34,9 @@ public class SessionService {
     }
 
     public Boolean SessionOpen(Long sessionId) {
-       Optional<Session> optionalSession = sessionRepository.findById(sessionId);
-        if (optionalSession.isPresent()) {
-            return LocalDateTime.now().isBefore(optionalSession.get().getStartingVoting());
+       Optional<Session> openSession = sessionRepository.findById(sessionId);
+        if (openSession.isPresent()) {
+            return LocalDateTime.now().isBefore(openSession.get().getStartingVoting());
         }
         throw new IllegalArgumentException(Messages.UNSUPPORTED_RESULT);
     }

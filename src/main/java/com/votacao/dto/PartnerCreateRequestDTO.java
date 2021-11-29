@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Builder
-public class PartnerDTO {
-    private Long id;
+public class PartnerCreateRequestDTO {
+
     private String cpf;
     private String nome;
 

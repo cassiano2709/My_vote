@@ -1,20 +1,25 @@
 package com.votacao.entity;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Entity
+@Data
 public class Partner {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column
     private Long id;
-    @Column
     private String name;
     @Column(unique = true)
-    @NotBlank
     private String cpf;
 }

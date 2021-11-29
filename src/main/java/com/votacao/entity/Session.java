@@ -19,14 +19,9 @@ public class Session {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long sessionId;
-
-    @Column
-    @NotBlank
     private LocalDateTime startingVoting;
-
-    @Column
-    @NotBlank
     private LocalDateTime finalVoting;
+
 
 
 
