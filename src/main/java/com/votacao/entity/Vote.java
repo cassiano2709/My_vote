@@ -1,6 +1,9 @@
 package com.votacao.entity;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
@@ -9,18 +12,15 @@ import javax.persistence.*;
 @Builder
 @Entity
 @Data
+@Table(name = "vote")
 public class Vote {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long voteId;
-
-    @ManyToOne
-    @JoinColumn(name = "partener_id" , referencedColumnName = "id")
-    private Partner partner;
-
-    @ManyToOne
-    @JoinColumn(name = "session_id", referencedColumnName = "id")
-    private Session session;
+    private Long id;
+    private Long partnerId;
+    private Long sessionId;
+    private Long topicId;
+    private String vote;
 
 }

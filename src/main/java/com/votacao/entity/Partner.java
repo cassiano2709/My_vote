@@ -4,9 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 
 
 @NoArgsConstructor
@@ -14,12 +14,12 @@ import javax.validation.constraints.NotBlank;
 @Builder
 @Entity
 @Data
+@Table(name = "partner")
 public class Partner {
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    @Column(unique = true)
     private String cpf;
 }

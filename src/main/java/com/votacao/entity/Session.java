@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @NoArgsConstructor
@@ -14,15 +14,13 @@ import java.time.LocalDateTime;
 @Builder
 @Entity
 @Data
+@Table(name = "sessao")
 public class Session {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long sessionId;
-    private LocalDateTime startingVoting;
-    private LocalDateTime finalVoting;
-
-
-
-
+    private Long id;
+    private Long topicId;
+    private LocalDate startDateTime;
+    private LocalDate finishDateTime;
 }

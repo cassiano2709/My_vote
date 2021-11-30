@@ -2,7 +2,7 @@ package com.votacao.resource;
 
 import com.votacao.dto.SessionCreateRequestDTO;
 import com.votacao.dto.SessionDTO;
-import com.votacao.dto.SessionUpdateRequestDTO;
+import com.votacao.entity.Topic;
 import com.votacao.service.SessionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 import static org.springframework.http.HttpStatus.CREATED;
+import static org.springframework.http.HttpStatus.OK;
 
 
 @RestController
@@ -26,18 +27,20 @@ public class SessionResource {
     }
 
     @GetMapping("/{id}")
+    @ResponseStatus(OK)
     public SessionDTO findById(@PathVariable Long id) {
         return service.findDTOById(id);
     }
 
     @GetMapping("/{sessionId}")
-    public Boolean openSession(@PathVariable Long sessionId) {
-        return service.SessionOpen(sessionId);
+    @ResponseStatus(OK)
+    public Boolean openSession(@PathVariable Long sessionId, Topic topic) {
+        return service.SessionOpen(sessionId, topic);
     }
 
-    @PutMapping
-    public SessionDTO update(@Valid @RequestBody SessionUpdateRequestDTO request) {
-        return service.updateSession(request);
-    }
+//    @PutMapping
+//    public SessionDTO update(@Valid @RequestBody SessionUpdateRequestDTO request) {
+//        return service.updateSession(request);
+//    }
 
 }

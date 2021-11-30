@@ -3,6 +3,7 @@ package com.votacao.resource;
 
 import com.votacao.dto.TopicCreateRequestDTO;
 import com.votacao.dto.TopicDTO;
+import com.votacao.entity.Topic;
 import com.votacao.service.TopicService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 import static org.springframework.http.HttpStatus.CREATED;
+import static org.springframework.http.HttpStatus.OK;
 
 @RestController
 @RequestMapping("/topic")
@@ -20,7 +22,19 @@ public class TopicResource {
 
     @PostMapping
     @ResponseStatus(CREATED)
-    public TopicDTO create(@Valid @RequestBody TopicCreateRequestDTO topicrequest) {
-        return service.create(topicrequest);
+    public TopicDTO create(@Valid @RequestBody TopicCreateRequestDTO topicRequest) {
+        return service.create(topicRequest);
+    }
+
+    @GetMapping("/{id}")
+    @ResponseStatus(OK)
+    public Topic findById(@Valid @RequestParam Long id){
+        return service.findById(id);
+    }
+
+    @DeleteMapping
+    @ResponseStatus(OK)
+    public void delete(@Valid @RequestParam Long id){
+        service.delete(id);
     }
 }

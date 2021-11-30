@@ -5,7 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -14,8 +14,9 @@ import java.time.LocalDateTime;
 public class SessionDTO {
 
     private Long id;
-    private LocalDateTime startDateTime;
-    private LocalDateTime finishDateTime;
+    private TopicDTO topicDTO;
+    private LocalDate startDateTime;
+    private LocalDate finishDateTime;
     private boolean openSession;
 
 }

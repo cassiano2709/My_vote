@@ -1,24 +1,20 @@
 package com.votacao.dto;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Builder
-public class VoteDTO {
+public class VoteCreateRequestDTO {
 
-    Long Id;
-    String vote;
-    Long partenerId;
-    Long countYes;
-    Long countNo;
+    Long sessionId;
+    Long topicId;
+    List<PartnerVoteCreateRequestDTO> patnerVote;
 
 }

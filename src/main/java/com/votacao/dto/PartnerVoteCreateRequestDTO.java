@@ -6,19 +6,13 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Builder
-public class VoteDTO {
+public class PartnerVoteCreateRequestDTO {
 
-    Long Id;
+    Long partnerId;
     String vote;
-    Long partenerId;
-    Long countYes;
-    Long countNo;
 
 }
