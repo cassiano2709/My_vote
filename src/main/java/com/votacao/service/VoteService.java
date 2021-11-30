@@ -21,7 +21,7 @@ public class VoteService {
 
     public void openVote(VoteCreateRequestDTO voteCreateRequestDTO) {
         //List<Partner> partnerList = partnerRepository.findAll();
-        for (PartnerVoteCreateRequestDTO partner1 :voteCreateRequestDTO.getPatnerVote()) {
+        for (PartnerVoteCreateRequestDTO partner1 :voteCreateRequestDTO.getPartnerVote()) {
             repository.save(Vote.builder()
                     .partnerId(partner1.getPartnerId())
                     .sessionId(voteCreateRequestDTO.getSessionId())

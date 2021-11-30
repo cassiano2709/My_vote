@@ -15,6 +15,6 @@ public class VoteCreateRequestDTO {
 
     Long sessionId;
     Long topicId;
-    List<PartnerVoteCreateRequestDTO> patnerVote;
+    List<PartnerVoteCreateRequestDTO> partnerVote;
 
 }
