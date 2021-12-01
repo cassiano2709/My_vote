@@ -1,9 +1,6 @@
 package com.votacao.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -12,6 +9,7 @@ import javax.persistence.*;
 @Builder
 @Entity
 @Data
+@With
 @Table(name = "vote")
 public class Vote {
 
@@ -22,5 +20,4 @@ public class Vote {
     private Long sessionId;
     private Long topicId;
     private String vote;
-
-}
+   }

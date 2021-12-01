@@ -14,5 +14,4 @@ public class PartnerVoteCreateRequestDTO {
 
     Long partnerId;
     String vote;
-
 }

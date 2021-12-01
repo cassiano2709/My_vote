@@ -35,12 +35,7 @@ public class SessionResource {
     @GetMapping("/{sessionId}")
     @ResponseStatus(OK)
     public Boolean openSession(@PathVariable Long sessionId, Topic topic) {
-        return service.SessionOpen(sessionId, topic);
+        return service.sessionOpen(sessionId, topic);
     }
-
-//    @PutMapping
-//    public SessionDTO update(@Valid @RequestBody SessionUpdateRequestDTO request) {
-//        return service.updateSession(request);
-//    }
 
 }

@@ -1,10 +1,7 @@
 package com.votacao.entity;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.persistence.*;
@@ -14,6 +11,7 @@ import javax.persistence.*;
 @Builder
 @Entity
 @Data
+@With
 @Table(name = "topic")
 public class Topic {
 
@@ -23,5 +21,7 @@ public class Topic {
     @Column(unique = true)
     private String name;
     private String description;
+    private Long countYes;
+    private Long countNo;
 
 }

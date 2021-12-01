@@ -28,13 +28,15 @@ public class TopicResource {
 
     @GetMapping("/{id}")
     @ResponseStatus(OK)
-    public Topic findById(@Valid @RequestParam Long id){
-        return service.findById(id);
+    public TopicDTO findDTOById(@Valid @RequestParam Long id){
+
+        return service.findDTOById(id);
     }
 
     @DeleteMapping
     @ResponseStatus(OK)
     public void delete(@Valid @RequestParam Long id){
+
         service.delete(id);
     }
 }

@@ -22,4 +22,5 @@ public class Partner {
     private Long id;
     private String name;
     private String cpf;
+
 }

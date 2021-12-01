@@ -15,4 +15,6 @@ public class TopicDTO {
     private Long id;
     private String name;
     private String description;
+    private Long countYes;
+    private Long countNo;
 }

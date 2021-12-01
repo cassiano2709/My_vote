@@ -41,7 +41,7 @@ public class SessionService {
         return null;
     }
 
-    public Boolean SessionOpen(Long sessionId, Topic topic) {
+    public Boolean sessionOpen(Long sessionId, Topic topic) {
        Optional<Session> openSession = repository.findById(sessionId);
         if (openSession.isPresent()) {
             return LocalDate.now().isBefore(openSession.get().getFinishDateTime());

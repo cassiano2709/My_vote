@@ -16,9 +16,9 @@ import java.time.LocalDateTime;
 public class VoteDTO {
 
     Long Id;
-    String vote;
-    Long partenerId;
-    Long countYes;
-    Long countNo;
+    private Long partnerId;
+    private Long sessionId;
+    private Long topicId;
+    private String vote;
 
 }
