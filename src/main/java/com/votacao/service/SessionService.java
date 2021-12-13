@@ -54,11 +54,4 @@ public class SessionService {
                 () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Não rolou"));
     }
 
-
-
-//    public SessionDTO updateSession(SessionUpdateRequestDTO request){
-//
-//        return null;
-//    }
-
 }

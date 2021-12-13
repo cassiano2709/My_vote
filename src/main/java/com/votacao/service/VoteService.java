@@ -21,9 +21,12 @@ public class VoteService {
     private TopicService topicService;
     private  PartnerRepository partnerRepository;
     private  SessionService sessionService;
+    private ApiExternService apiExternService;
+
 
     public void openVote(VoteCreateRequestDTO voteCreateRequestDTO) {
-         topicService.allVotes();
+        topicService.allVotes();
+        apiExternService.findCPF("cpf");
         for (PartnerVoteCreateRequestDTO partner1 :voteCreateRequestDTO.getPartnerVote()) {
             repository.save(Vote.builder()
                     .partnerId(partner1.getPartnerId())
@@ -43,8 +46,5 @@ public class VoteService {
         Vote vote = this.findById(id);
         repository.delete(vote);
     }
-
-
-
 
 }

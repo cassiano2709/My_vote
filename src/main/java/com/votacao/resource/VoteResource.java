@@ -34,7 +34,6 @@ public class VoteResource {
         service.delete(id);
     }
 
-
     @GetMapping("/{id}")
     @ResponseStatus(OK)
     public Vote findById(@Valid @RequestParam Long id){

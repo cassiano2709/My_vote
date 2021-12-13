@@ -33,7 +33,6 @@ public class PartnerResource {
         service.deletePartner(id);
     }
 
-
     @GetMapping("/{id}")
     @ResponseStatus(OK)
     public Partner findById(@Valid @RequestParam Long id){
