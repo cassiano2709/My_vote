@@ -22,9 +22,9 @@ public class VoteResource {
 
     @PostMapping
     @ResponseStatus(CREATED)
-    public void openVote(@Valid @RequestBody VoteCreateRequestDTO vote) {
+    public void openVote(@Valid @RequestBody VoteCreateRequestDTO vote, Long id) {
 
-        service.openVote(vote);
+        service.openVote(vote,id);
     }
 
     @DeleteMapping("/{id}")

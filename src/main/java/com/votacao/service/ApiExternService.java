@@ -17,7 +17,7 @@ public class ApiExternService {
         String uri = "https://user-info.herokuapp.com/users/" + cpf;
 
         RestTemplate restTemplate = new RestTemplate();
-       return  restTemplate.getForObject(uri, String.class);
-       }
+        return restTemplate.getForObject(uri, String.class);
+    }
 }
 

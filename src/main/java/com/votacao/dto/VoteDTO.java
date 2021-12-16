@@ -20,5 +20,6 @@ public class VoteDTO {
     private Long sessionId;
     private Long topicId;
     private String vote;
+    private String cpf;
 
 }
